@@ -1,44 +1,10 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light fixed-top dropdown-hover"
+>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Real Estate</a>
+    <a class="navbar-brand ms-5" href="#"
+      ><img src="assets/images/logo.png" class="img-fluid w-75"
+    /></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -52,95 +18,194 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" routerLink="home">Home</a>
+        <li class="nav-item me-5">
+          <a class="nav-link" href="javascript:void(0)" routerLink="home"
+            >Home</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" routerLink="properties">Properties</a>
+        <li class="nav-item dropdown me-5">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownBuy"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            routerLink="properties"
+          >
+            Properties
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownBuy">
+            <li><a class="dropdown-item" href="#">Buy</a></li>
+            <li><a class="dropdown-item" href="#">Rent</a></li>
+            <li><a class="dropdown-item" href="#">Sell</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" routerLink="aboutus">About Us</a>
+        <li class="nav-item me-5">
+          <a class="nav-link" href="javascript:void(0)" routerLink="Agents"
+            >Agents</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" routerLink="contactus">Contact Us</a>
+        <li class="nav-item me-5">
+          <a class="nav-link" href="javascript:void(0)" routerLink="aboutus"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link" href="javascript:void(0)" routerLink="contactus"
+            >Contact Us</a
+          >
         </li>
       </ul>
     </div>
     <ul class="navbar-nav ms-auto me-5">
-        <li class="nav-item me-3">
-          <button class="btn btn-success" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-        </li>
-        <li class="nav-item">
-          <button class="btn btn-danger" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
-        </li>
-    </ul>  
+      <li class="nav-item me-3">
+        <button
+          class="btn btn-purple px-5"
+          href="javascript:void(0)"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+        >Login</button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="btn btn-danger px-5"
+          href="javascript:void(0)"
+          data-bs-toggle="modal"
+          data-bs-target="#signupModal"
+        >
+          Sign Up
+        </button>
+      </li>
+    </ul>
   </div>
 </nav>
 
-
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="loginModalLabel">Login</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              placeholder="Enter email"
+            />
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password">
+            <input
+              type="password"
+              class="form-control"
+              id="passwordInput"
+              placeholder="Enter password"
+            />
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
         <button type="button" class="btn btn-primary">Login</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="signupModal"
+  tabindex="-1"
+  aria-labelledby="signupModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
             <label for="firstNameInput" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstNameInput" placeholder="Enter first name">
+            <input
+              type="text"
+              class="form-control"
+              id="firstNameInput"
+              placeholder="Enter first name"
+            />
           </div>
           <div class="mb-3">
             <label for="lastNameInput" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastNameInput" placeholder="Enter last name">
+            <input
+              type="text"
+              class="form-control"
+              id="lastNameInput"
+              placeholder="Enter last name"
+            />
           </div>
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              placeholder="Enter email"
+            />
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password">
+            <input
+              type="password"
+              class="form-control"
+              id="passwordInput"
+              placeholder="Enter password"
+            />
           </div>
           <div class="mb-3">
-            <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm password">
+            <label for="confirmPasswordInput" class="form-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPasswordInput"
+              placeholder="Confirm password"
+            />
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
         <button type="button" class="btn btn-primary">Sign Up</button>
       </div>
     </div>
   </div>
 </div>
-

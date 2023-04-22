@@ -4,11 +4,71 @@
 //   font-family: "Roboto", sans-serif;
 // }
 
+// #7E3680(orchid),#EFE1E8(cream),#420264(indigo),#A654DF(violet) #da70d6
 
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
 }
 
-p,span,a{
-    font-family: 'Poppins', sans-serif;
+p,
+span,
+a {
+  // font-family: "Poppins", sans-serif;
+  font-family: "Prata", Sans-serif;;
+}
+
+.fas {
+  font-size: 18px;
+}
+
+.bg-light {
+  background-color:var(--background-color)!important;
+}
+
+:root {
+  --primary-color: #ff6600;
+  --secondary-color: #ff9933;
+  --accent-color: #ffc266;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --border-color: #cccccc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  border-color: var(--border-color);
+}
+
+.card {
+  border-color: var(--border-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.alert {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--text-color);
 }

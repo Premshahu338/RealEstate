@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'RealEState';
 
   constructor(private router: Router) { }
-
-
+ 
 
 }

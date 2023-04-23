@@ -34,11 +34,6 @@ h1 {
   }
 }
 
-p {
-  // font-size: 2rem;
-  padding: 1rem;
-}
-
 .btn-purple {
   background-color: var(--accent-color);
   color: var(--text-color);
@@ -78,6 +73,15 @@ p {
 .card {
   position: relative;
   overflow: hidden;
+
+  .card-content{
+    span {
+      color: var(--secondary-color);
+    }
+    p{
+      font-size: 12px;
+    }
+  }
 }
 
 .card:hover {
@@ -93,6 +97,10 @@ p {
 
 .about-us {
   background-color: #dcdcdcf7;
+
+  p{
+    padding: 1rem;
+  }
 }
 
 .btn-info {

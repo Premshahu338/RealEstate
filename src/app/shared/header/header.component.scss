@@ -5,12 +5,12 @@
 
 .navbar-nav .nav-link {
   font-size: 18px;
-  color: var(--text-color);
+  color: #000000;
   font-family: "Work Sans", Sans-serif;
 }
 
 .navbar-brand {
-  color: var(--text-color);
+  color: var(--accent-color);
 }
 
 .navbar-nav .nav-link:hover,
@@ -44,4 +44,13 @@
   color: var(--text-color);
   transition: all 0.3s ease-in-out;
   transform: scale(1.05);
+}
+
+
+.navbar-scrolled {
+  background-color: #333;
+}
+
+.navbar-scrolled .nav-link {
+  color: #fff;
 }

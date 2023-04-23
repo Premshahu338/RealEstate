@@ -1,4 +1,3 @@
-
 .hero-section {
   background-image: url("../../assets/images/home-17.jpg");
   background-size: cover;
@@ -40,6 +39,19 @@ p {
   padding: 1rem;
 }
 
+.btn-purple {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 0;
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+
 .btn-outline-purple {
   background-color: var(--primary-color);
   color: #fff;
@@ -47,13 +59,13 @@ p {
   border-radius: 50px;
 }
 
-.btn-outline-purple:hover,
-.btn-outline-purple:focus {
-  background-color: #ffffff;
-  color: var(--secondary-color);
-  transition: all 0.3s ease-in-out;
-  transform: scale(1.07);
-}
+// .btn-outline-purple:hover,
+// .btn-outline-purple:focus {
+//   background-color: #ffffff;
+//   color: var(--secondary-color);
+//   transition: all 0.3s ease-in-out;
+//   transform: scale(1.07);
+// }
 
 .heading-2 {
   color: #000000;
@@ -73,22 +85,21 @@ p {
   transform: scale(1);
   transition: all 0.5s ease-in;
 }
+
 .img-fluid:hover {
   transform: scale(1.03);
   transition: all 0.3s ease-in-out;
 }
 
-
-.about-us{
-  background-color:#dcdcdcf7;
+.about-us {
+  background-color: #dcdcdcf7;
 }
 
-.btn-info{
-margin-left: 16px;
+.btn-info {
+  margin-left: 16px;
 }
 
-.btn-info:hover{
-  transition:all 0.5s ease-in-out;
+.btn-info:hover {
+  transition: all 0.5s ease-in-out;
   transform: scaleX(1.05);
 }
-

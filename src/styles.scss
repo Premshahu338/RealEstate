@@ -6,6 +6,9 @@
 
 // #7E3680(orchid),#EFE1E8(cream),#420264(indigo),#A654DF(violet) #da70d6
 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 h1,
 h2,
 h3,
@@ -20,10 +23,12 @@ span,
 a {
   // font-family: "Poppins", sans-serif;
   font-family: "Prata", Sans-serif;;
+  color: #333333;
 }
 
 .fas {
   font-size: 18px;
+  color: #333333;
 }
 
 .bg-light {
@@ -48,13 +53,9 @@ a {
   color: var(--primary-color);
 }
 
-button {
-  background-color: var(--primary-color);
-  border-color: var(--border-color);
-}
-
-.card {
-  border-color: var(--border-color);
+.card{
+  border: none;
+  border-radius: 0;
 }
 
 .btn-primary {

@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ListingsComponent } from './listings/listings.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ContactusComponent } from './contactus/contactus.component';
     HomeComponent,
     PropertiesComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    ListingsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

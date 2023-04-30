@@ -54,14 +54,6 @@ h1 {
   border-radius: 50px;
 }
 
-// .btn-outline-purple:hover,
-// .btn-outline-purple:focus {
-//   background-color: #ffffff;
-//   color: var(--secondary-color);
-//   transition: all 0.3s ease-in-out;
-//   transform: scale(1.07);
-// }
-
 .heading-2 {
   color: #000000;
   font-size: 30px;
@@ -96,7 +88,7 @@ h1 {
 }
 
 .about-us {
-  background-color: #dcdcdcf7;
+  background-color: #fffffff7;
 
   p{
     padding: 1rem;
@@ -110,4 +102,8 @@ h1 {
 .btn-info:hover {
   transition: all 0.5s ease-in-out;
   transform: scaleX(1.05);
+}
+
+.properties-section{
+  background-color: var(--background-color);
 }

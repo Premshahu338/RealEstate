@@ -10,6 +10,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ListingsComponent } from './listings/listings.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +22,11 @@ import { DropdownModule } from 'primeng/dropdown';
     AboutusComponent,
     ContactusComponent,
     ListingsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     DropdownModule

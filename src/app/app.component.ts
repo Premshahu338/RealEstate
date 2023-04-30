@@ -10,6 +10,17 @@ export class AppComponent {
   title = 'RealEState';
 
   constructor(private router: Router) { }
- 
+
+
+  isLogin() {
+    if (this.router.url.includes('register')) {
+      return false
+    }
+    else {
+      return true;
+    }
+
+
+  }
 
 }

@@ -1,0 +1,28 @@
+.property-details {
+    .badge {
+        color: #000000;
+    }
+
+    .price {
+        color: var(--secondary-color);
+    }
+
+    .fas {
+        color: #333333;
+    }
+
+    .card{
+        box-shadow: 0 0 6px rgb(137 124 124 / 80%);
+        // box-shadow: 0 0px 15px 0 rgb(47 192 230 / 13%);     
+       }
+
+       .carousel-inner{
+        .img-fluid{
+            max-height: 60vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: cover;
+        }
+       }
+}

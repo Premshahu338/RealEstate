@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="row my-4">
+                <!-- <div class="row my-4">
                     <div class="col-lg-12">
                         <div class="card rounded">
                             <div class="card-body py-4">
@@ -75,10 +75,10 @@
                                         <a href="javascript:void(0)"><i class="fas fa-bath"></i></a>
                                         <p class="m-0">2 Bathrooms</p>
                                     </div>
-                                    <!-- <div class="col-lg-2 text-center">
+                                    <div class="col-lg-2 text-center">
                                     <a  href="javascript:void(0)"><i class="fas fa-home"></i></a>
                                     <p>Houses</p>
-                                </div> -->
+                                </div>
                                     <div class="col-lg-2 text-center">
                                         <a href="javascript:void(0)"><i class="fas fa-calendar-days"></i></a>
                                         <p class="m-0">Year Built: 2019</p>
@@ -87,28 +87,137 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                
-              
-
-                <!-- <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        [containerStyle]="{ 'max-width': '60px' }"
-                        <div class="card">
-                            <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5">
-                                <ng-template pTemplate="item" let-item>
-                                    <img [src]="item.itemImageSrc" class="img-fluid w-75" />
-                                </ng-template>
-                                <ng-template pTemplate="thumbnail" let-item>
-                                    <div class="grid grid-nogutter justify-content-center">
-                                        <img [src]="item.thumbnailImageSrc" class="img-fluid w-25" />
-                                    </div>
-                                </ng-template>
-                            </p-galleria>
+                <div class="row details my-4">
+                    <div class="col-lg-8">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Description</h4>
+                                <p>Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
+                                    neighborhood. This home features hardwood floors throughout, brand new bathrooms,
+                                    newer EIK, modern front-load washer/dryer, full dining room, large living area, 3
+                                    spacious bedrooms and plenty of storage. Master bedroom includes both a standard
+                                    closet and custom closet wall unit. Large windows face many directions for tons of
+                                    natural light.</p>
+                                <p>Mckinley Hill is situated inside Fort Bonifacio which is a 50 hectares owned by
+                                    Megaworld. Mckinley Hill is Said to be the Biggest and Grandest Development in Metro
+                                    manila as of Today. what’s nice about Mckinley Hill this whole 50 hectare is a
+                                    Master Planned Community in which everything you may need is within your reach like
+                                    Schools, Leisure Parks and Recreational, BPO Offices , Residential Tower and Even
+                                    Medical Centers is just a Few stroll Away.</p>
+                            </div>
                         </div>
                     </div>
-                </div> -->
+
+                    <div class="col-lg-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Video Tour</h4>
+                                <video controls class="w-100">
+                                    <source src="assets/images/sample.mp4" type="video/mp4">
+                                    <source src="assets/images/sample.mp4" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row contact-agent mt-5 mb-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img src="assets/images/agent-1.jpg" alt="" class="img-fluid">
+                                <h3 class="pe-3 pt-3">Janet Richmond</h3>
+                                <p>Property Selling Agent</p>
+                                <div class="text-start p-2">
+                                    <p> <a href="javascript:void(0)"><i class="fas fa-phone me-2"></i>(305) 555-4555</a>
+                                    </p>
+                                    <p> <a href="javascript:void(0)"><i
+                                                class="fas fa-envelope me-2"></i>janet@website.net</a></p>
+                                    <p> <a href="javascript:void(0)"><i class="fas fa-circle-info me-2"></i>(305)
+                                            555-4555</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6 text-center">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4><a href="javascript:void(0)">Request Information</a> </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4><a href="javascript:void(0)">Schedule a Tour</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form class="p-3">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="inputName" placeholder="Your Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="inputEmail"
+                                            placeholder="Your Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" id="inputPassword"
+                                            placeholder="Your Contact Number">
+                                    </div>
+                                    <div class="my-3">
+                                        <textarea name="" id="" cols="30" rows="10" placeholder="Description"
+                                            class="w-100 p-2"></textarea>
+                                    </div>
+                                    <div class="my-3">
+                                        <button type="submit" class="btn btn-info w-100">Submit</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <h3 class="py-2">Property Address</h3>
+                                        <div class="row p-2">
+                                            <div class="col-lg-4">
+                                                <p><b>Address:</b> Bedford Ave</p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p><b>City:</b> New York</p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p><b>Area:</b> Manhattan</p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p><b>State/County:</b> New York State</p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p><b>Zip:</b> 11690</p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p><b>Country:</b> United States</p>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <span class="badge bg-warning px-3 py-2">Get On Google Maps</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

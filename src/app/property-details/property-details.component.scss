@@ -11,18 +11,58 @@
         color: #333333;
     }
 
-    .card{
-        box-shadow: 0 0 6px rgb(137 124 124 / 80%);
-        // box-shadow: 0 0px 15px 0 rgb(47 192 230 / 13%);     
-       }
+    .card {
 
-       .carousel-inner{
-        .img-fluid{
+        // box-shadow: 0 0 6px rgb(137 124 124 / 80%);
+        // box-shadow: 0 0px 15px 0 rgb(47 192 230 / 13%); 
+        &:hover {
+            box-shadow: 0 0 6px rgba(160, 156, 156, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .carousel-inner {
+        .img-fluid {
             max-height: 60vh;
             width: 100%;
             background-repeat: no-repeat;
             background-size: cover;
             object-fit: cover;
         }
-       }
+    }
+
+    .details {
+        h4 {
+            font-family: roboto, sans-serif;
+            font-size: 16px;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        p {
+            color: #414040;
+        }
+    }
+
+    .contact-agent {
+        font-family: roboto, sans-serif;
+        h3 {
+            font-size: 20px;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        h4 {
+            a{
+                text-decoration: none;
+                font-size: 16px;
+                color: #000000;
+                font-weight: 600;
+            }
+        }
+        p{
+            font-size:15px;
+            color: #333333;
+        }
+    }
 }

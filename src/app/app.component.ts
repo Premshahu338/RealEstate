@@ -13,7 +13,7 @@ export class AppComponent {
 
 
   isLogin() {
-    if (this.router.url.includes('register')) {
+    if (this.router.url.includes('signup')) {
       return false
     }
     else {

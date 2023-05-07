@@ -5,7 +5,8 @@ import { PropertiesComponent } from './properties/properties.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ListingsComponent } from './listings/listings.component';
-import { RegisterComponent } from './register/register.component';
+import { SignupComponent } from './signup/signup.component';
+import { AgentsComponent } from './agents/agents.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'listings', component: ListingsComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'agents', component: AgentsComponent },
   { path: 'property-details', loadChildren: () => import('./property-details/property-details.module').then(m => m.PropertyDetailsModule) },
 ];
 

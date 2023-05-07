@@ -1,0 +1,14 @@
+.signup-section{
+    background-image: url("../../assets/images/home-22.jpg");
+    height: 100vh;
+    background-size: cover;
+    object-fit: cover;
+ 
+
+    .card{
+        width: 50%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+}

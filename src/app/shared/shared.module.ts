@@ -5,6 +5,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
     SharedComponent,
     HeaderComponent,
     FooterComponent,
+    SubHeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
   exports:[
     HeaderComponent,
     FooterComponent,
+    SubHeaderComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,8 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top dropdown-hover">
   <div class="container-fluid">
+    
     <a class="navbar-brand ms-5" href="#">
       <img src="assets/images/logo.png" class="img-fluid w-75" />
     </a>
@@ -35,7 +38,7 @@
         </li>
 
         <li class="nav-item me-5">
-          <a class="nav-link" href="javascript:void(0)" routerLink="Agents">Agents</a>
+          <a class="nav-link" href="javascript:void(0)" routerLink="agents">Agents</a>
         </li>
 
         <li class="nav-item me-5">
@@ -72,6 +75,7 @@
   </div>
 </nav>
 
+
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -83,12 +87,13 @@
           <div class="col-md-6 p-3">
             <div class="row">
               <div class="col-md-12">
-                <button type="button" class="btn-close float-right" data-bs-dismiss="modal"></button>        
+                <button type="button" class="btn-close float-right" data-bs-dismiss="modal"></button>
               </div>
               <div class="col-md-12 my-3 text-center">
                 <h5><b>Sign into your account</b></h5>
               </div>
             </div>
+
             <div class="container">
               <form class="mb-2">
                 <div class="mb-3">
@@ -112,62 +117,18 @@
                   <a href="javascript:void(0)"><i class="fa-brands fa-instagram me-4"></i></a>
                 </div>
                 <div class="col-sm-8 mt-3">
-                  <span><b> <a href="javascript:void(0)" routerLink="register">Register Here</a></b></span>
+                  <span><b> <a href="javascript:void(0)" routerLink="signup" data-bs-dismiss="modal">Register
+                        Here</a></b></span>
                 </div>
                 <div class="col-sm-4 mt-3">
                   <span><a href="javascript:void(0)">Forget Password</a></span>
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Login</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="firstNameInput" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstNameInput" placeholder="Enter first name" />
-          </div>
-          <div class="mb-3">
-            <label for="lastNameInput" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastNameInput" placeholder="Enter last name" />
-          </div>
-          <div class="mb-3">
-            <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Enter email" />
-          </div>
-          <div class="mb-3">
-            <label for="passwordInput" class="form-label">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" />
-          </div>
-          <div class="mb-3">
-            <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm password" />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Sign Up</button>
       </div>
     </div>
   </div>

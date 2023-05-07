@@ -10,8 +10,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ListingsComponent } from './listings/listings.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignupComponent } from './signup/signup.component';
+import { AgentsComponent } from './agents/agents.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutusComponent,
     ContactusComponent,
     ListingsComponent,
-    RegisterComponent,
+    SignupComponent,
+    AgentsComponent,
   ],
   imports: [
     BrowserModule,

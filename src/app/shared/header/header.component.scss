@@ -1,3 +1,4 @@
+
 .dropdown-hover .nav-item:hover .dropdown-menu {
   transition: all 1s ease-out;
   display: block;
@@ -27,8 +28,6 @@
 
 .btn-purple:hover,
 .btn-purple:focus {
-  background-color: #fffefe;
-  color: var(--text-color);
   transition: all 0.3s ease-in-out;
   transform: scale(1.05);
 }

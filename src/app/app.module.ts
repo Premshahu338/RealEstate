@@ -13,6 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
 import { AgentsComponent } from './agents/agents.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AgentsComponent } from './agents/agents.component';
     ListingsComponent,
     SignupComponent,
     AgentsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

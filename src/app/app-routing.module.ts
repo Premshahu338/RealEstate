@@ -7,6 +7,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ListingsComponent } from './listings/listings.component';
 import { SignupComponent } from './signup/signup.component';
 import { AgentsComponent } from './agents/agents.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'listings', component: ListingsComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'agents', component: AgentsComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'property-details', loadChildren: () => import('./property-details/property-details.module').then(m => m.PropertyDetailsModule) },
 ];
 

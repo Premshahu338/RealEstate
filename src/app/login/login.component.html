@@ -4,16 +4,29 @@
         <div class="card p-4">
             <div class="card-body">
                 <h4 class="heading py-3">Sign into your account</h4>
-                <form class="mb-3">
+                <form class="mb-3" [formGroup]="loginForm">
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput"
-                            placeholder="Enter Username or Email" />
+                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Username or Email"
+                            formControlName="email" />
+                        <div class="mt-2"
+                            *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
+                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                        </div>
+                        <div class="mt-2"
+                            *ngIf="loginForm.controls['email'].hasError('pattern') && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" />
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password"
+                            formControlName="password" />
+                        <div class="mt-2"
+                            *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+                            <span class="text-danger"><b>*Please Enter Your Password</b></span>
+                        </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-info px-3 py-2 w-100">Login</button>
+                        <button class="btn btn-info px-3 py-2 w-100" (click)="login()" [disabled]="loginForm.invalid">Login</button>
                     </div>
                 </form>
 
@@ -39,3 +52,5 @@
         </div>
     </div>
 </section>
+
+<p-toast position="top-right"></p-toast>

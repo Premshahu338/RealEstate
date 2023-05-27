@@ -12,13 +12,13 @@
     .card {
         width: 30%;
         position: absolute;
-        top: 8%;
-        left: 60%;
+        top: 3%;
+        left: 36%;
         box-shadow: 0 0 20px rgba(0, 0, 0, 2.7);
 
         .heading {
             font-family: roboto, sans-serif;
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 600;
         }
 
@@ -27,14 +27,35 @@
             font-size: 15px;
             color: #ff0000;
             font-weight: 600;
+        }
 
+        a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #000000;
+        }
 
-            a {
-                text-decoration: none;
-                font-weight: 700;
-                color: #000000;
+        li {
+            max-width: 50%;
+            text-align: center;
+            width: 50%;
+        }
 
-            }
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: aqua;
+            padding: 10px;
+            border-radius: 0%;
+            border: none;
         }
     }
+
+    .text-danger {
+        font-size: 12px;
+    }
+
+    
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -14,7 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
 import { AgentsComponent } from './agents/agents.component';
 import { LoginComponent } from './login/login.component';
-
+import { AgentsProfileComponent } from './agents-profile/agents-profile.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,18 @@ import { LoginComponent } from './login/login.component';
     SignupComponent,
     AgentsComponent,
     LoginComponent,
+    AgentsProfileComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

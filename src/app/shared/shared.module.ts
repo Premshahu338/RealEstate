@@ -6,6 +6,7 @@ import { SharedComponent } from './shared.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    ToastModule
   ],
   exports:[
     HeaderComponent,

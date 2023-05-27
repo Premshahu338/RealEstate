@@ -1,0 +1,46 @@
+<section class="signup-section">
+    <img src="../../assets/images/home-18.jpg" alt="" class="img-fluid">
+    <div class="container-fluid">
+        <div class="card p-4">
+            <div class="card-body">
+                <h4 class="heading py-3">Sign into your account</h4>
+                <form class="mb-3" [formGroup]="AgentloginForm">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Username or Email"
+                            formControlName="email" />
+                        <div class="mt-2"
+                            *ngIf="AgentloginForm.controls['email'].hasError('required') && AgentloginForm.controls['email'].touched">
+                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                        </div>
+                        <div class="mt-2"
+                            *ngIf="AgentloginForm.controls['email'].hasError('pattern') && (AgentloginForm.controls['email'].touched || AgentloginForm.controls['email'].dirty)">
+                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password"
+                            formControlName="password" />
+                        <div class="mt-2"
+                            *ngIf="AgentloginForm.controls['password'].hasError('required') && AgentloginForm.controls['password'].touched">
+                            <span class="text-danger"><b>*Please Enter Your Password</b></span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-info px-3 py-2 w-100" (click)="Agentlogin()" [disabled]="AgentloginForm.invalid">Login</button>
+                    </div>
+                </form>
+
+                <div class="row my-4">
+                    <div class="col-lg-6 text-start mt-3">
+                        <a href="javascript:void(0)" routerLink="/signup">Register Here</a>
+                    </div>
+                    <div class="col-lg-6 text-end mt-3">
+                        <a href="javascript:void(0)">Forget Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p-toast position="top-right"></p-toast>

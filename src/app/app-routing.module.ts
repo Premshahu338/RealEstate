@@ -8,9 +8,10 @@ import { ListingsComponent } from './listings/listings.component';
 import { SignupComponent } from './signup/signup.component';
 import { AgentsComponent } from './agents/agents.component';
 import { LoginComponent } from './login/login.component';
+import { AgentsProfileComponent } from './agents-profile/agents-profile.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
   { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
   { path: 'home', component: HomeComponent },
   { path: 'properties', component: PropertiesComponent },
@@ -20,7 +21,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'agents', component: AgentsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'agents-profile', component: AgentsProfileComponent },
   { path: 'property-details', loadChildren: () => import('./property-details/property-details.module').then(m => m.PropertyDetailsModule) },
+  { path: 'agent', loadChildren: () => import('./agent/agent.module').then(m => m.AgentModule) },
 ];
 
 @NgModule({

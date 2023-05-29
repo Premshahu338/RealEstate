@@ -103,7 +103,9 @@
                                         <button class="btn btn-info px-3 py-2 w-100" (click)="userSignup()">Sign Up</button>
                                     </div>
                                 </form>
-
+                                <div class="text-center p-2">
+                                    <p>Already have an account ?<a href="javascript:void(0)" routerLink="/login"> User Login</a></p>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="agent-registration">
                                 <h4 class="heading p-3 text-center mt-2">Register as Agent</h4>
@@ -156,15 +158,16 @@
                                         <button class="btn btn-info px-3 py-2 w-100" (click)="agentSignup()">Sign Up</button>
                                     </div>
                                 </form>
+                                <div class="text-center p-2">
+                                    <p>Already have an account ?<a href="javascript:void(0)" routerLink="/agent/agent-login"> Login As Agent</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center p-2">
-                <p>Already have an account ?<a href="javascript:void(0)" routerLink="/login"> Login</a></p>
-            </div>
+            
         </div>
     </div>
 

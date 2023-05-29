@@ -1,12 +1,13 @@
 <section class="signup-section">
-    <img src="../../assets/images/home-18.jpg" alt="" class="img-fluid">
+    <img src="../../../assets/images/team--1.jpg" alt="" class="img-fluid">
     <div class="container-fluid">
         <div class="card p-4">
             <div class="card-body">
+                <p class="text-center text-danger"><b>Welcome To Agents Portal !!</b></p>
                 <h4 class="heading py-3">Sign into your account</h4>
                 <form class="mb-3" [formGroup]="AgentloginForm">
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Username or Email"
+                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Agent Email"
                             formControlName="email" />
                         <div class="mt-2"
                             *ngIf="AgentloginForm.controls['email'].hasError('required') && AgentloginForm.controls['email'].touched">

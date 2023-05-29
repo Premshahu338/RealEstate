@@ -59,6 +59,12 @@ a {
   border-color: var(--secondary-color);
 }
 
+
+.btn-info {
+  background-color: #4973d0 !important;
+  border-color: #4973d0 !important;
+}
+
 .alert {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
@@ -69,3 +75,14 @@ a {
   max-width: 65vw !important;
   margin: 7.75rem auto !important;
 }
+
+.btn-dark {
+  background-color: #4973d0 !important;
+  border-color: #4d77d0 !important;
+}
+
+// .dropdown:hover > .dropdown-menu {
+//   display: block !important;
+//   top: 122% !important;
+//   right: 1% !important;
+// }

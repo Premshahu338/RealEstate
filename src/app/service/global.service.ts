@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class GlobalService {
 
   basepath ="http://localhost:4000"
+  sidebar: boolean = true
 
   constructor(private http: HttpClient, public router: Router) { 
     const token = sessionStorage.getItem('token')

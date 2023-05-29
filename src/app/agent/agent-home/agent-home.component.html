@@ -1,0 +1,10 @@
+<div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <div class="sidebar-icon" [class.page-body-wrapper]="isAgentLogin()">
+        <app-sidebar *ngIf="isAgentLogin()"></app-sidebar>
+        <div class="page-body p-0" [class.closape-sidebar]="isAgentLogin()">
+            <div class="container-fluid dashboard-default-sec">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

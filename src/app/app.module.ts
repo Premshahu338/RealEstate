@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AgentsProfileComponent } from './agents-profile/agents-profile.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
+import { AgentModule } from './agent/agent.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { ToastModule } from 'primeng/toast';
     DropdownModule,
     ReactiveFormsModule,
     FormsModule,
-    ToastModule
+    AgentModule,
+    ToastModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

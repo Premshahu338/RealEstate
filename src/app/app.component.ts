@@ -13,14 +13,14 @@ export class AppComponent {
 
 
   isLogin() {
-    if (this.router.url.includes('signup') || this.router.url.includes('login')) {
+    if (this.router.url.includes('signup') || this.router.url.includes('login') || this.router.url.includes('/agent') || this.router.url.includes('/agent/agent-dashboard') || this.router.url.includes('/agent/agent-home') || this.router.url.includes('/agent/add-property')) {
       return false
     }
     else {
       return true;
     }
-
-
   }
+
+
 
 }

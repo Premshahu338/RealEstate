@@ -22,16 +22,16 @@ export class AgentloginComponent {
 
   Agentlogin(){
     if (this.AgentloginForm.valid) {    
-      this.global.postUnauthenticateData(this.global.basepath + '/user/login', this.AgentloginForm.value).subscribe((res: any) => {
+      this.global.postUnauthenticateData(this.global.basepath + '/agent/login', this.AgentloginForm.value).subscribe((res: any) => {
         if (res.success) {
           console.log(res);
           // sessionStorage.setItem('email', this.loginForm.controls['email'].value)
-          sessionStorage.setItem('isLogin','true')
+          sessionStorage.setItem('isAgentLogin','true')
           this.messageService.clear()
-          this.messageService.add({ severity: 'success', summary: 'User login successfully' });
+          this.messageService.add({ severity: 'success', summary: 'Agent login successfully' });
           setTimeout(() => {
             this.AgentloginForm.reset()
-            this.router.navigate(['/home'])
+            this.router.navigate(['/agent/agent-home'])
           }, 1000);
         }
       })

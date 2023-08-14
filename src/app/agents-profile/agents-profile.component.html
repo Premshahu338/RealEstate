@@ -1,39 +1,101 @@
-<section class="agents-profile mt-5">
-    <div class="container-fluid mt-5">
-        <div class="row my-5">
-            <div class="col-lg-10 mx-auto mt-5">
+<section class="hero-section">
+    <div class="hero-section-content">
+        <div class="p-3">
+            <h4 class="mb-3">Real Estate Agents</h4>
+        </div>
+    </div>
+</section>
+
+<section class="agents-profile">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-10 mx-auto">
                 <div class="card p-3">
                     <div class="card-body">
+                        <a href="javascript:void(0)" (click)="goBack()">
+                            <i class="fas fa-arrow-left me-2 bg-primary text-white p-3 my-4"></i>
+                        </a>
                         <div class="row">
                             <div class="col-lg-4">
                                 <img src="assets/images/agent-1.jpg" alt="" class="img-fluid">
                             </div>
                             <div class="col-lg-8">
                                 <div class="text-start border-bottom p-2">
-                                    <h3><b>Michaela Finney</b></h3>
+                                    <h3 class="agent-name"><b>{{agentName}}</b></h3>
                                     <p>Company Agent at Modern House Real Estate</p>
                                 </div>
                                 <div class="text-start p-2">
-                                    <p><b>Agent License:</b> 092-212-0987</p>
-                                    <p><b>Tax Number:</b> WIU-029340-3049</p>
                                     <p><b>Service Areas:</b> Chicago, Los Angeles, Miami Beach, New York</p>
                                     <p><b>Specialties:</b> Property management, Real estate development, Real estate
                                         appraising, Retail leasing, Apartment brokerage</p>
-                                </div>
-                                <div class="text-start pt-4">
-                                    <button type="button" class="btn btn-info px-3 py-2 me-3 w-25">Send Email</button>
+                                    <button type="button" class="btn btn-info px-3 py-2 m-2 w-25 meadia-btn">Send
+                                        Email</button>
                                     <button type="button"
-                                        class="btn btn-outline-info px-3 py-2 w-25 text-dark">Call</button>
+                                        class="btn btn-outline-info px-3 py-2 m-2 w-25 text-dark meadia-btn">Call</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-10 mx-auto my-3">
-                <div class="card p-3">
+
+            <div class="col-lg-10 mx-auto properties-section">
+                <div class="text-center">
+                    <p class="fs-5">Properties Listed By :<span class="fs-5 agent-name"><b> {{agentName}}</b></span></p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 my-4" *ngFor="let item of agentProperties; let i = index">
+                        <div class="card m-3 h-100 shadow">
+                            <img src="assets/images/home--8.jpg" class="img-fluid" alt="..." />
+                            <span class="badge bg-primary px-3 py-2 text-dark">{{item.category}}</span>
+
+                            <div class="card-body p-0">
+                                <div class="card-content p-3">
+                                    <div class="row">
+                                        <div class="col-lg-9 text-start">
+                                            <h6 class="mb-2"><b>{{item.propertyName}}</b></h6>
+                                        </div>
+                                        <div class="col-lg-3 text-end">
+                                            <div class="tooltip-container">
+                                                <span class="tooltip">Add to favorites</span>
+                                                <a href="javascript:void(0)" class="text-dark fs-5" (click)="addPropertyToFavorites(item)"><i
+                                                    class="fas fa-heart-circle"></i></a>
+                                              </div>
+                            
+                                        </div>
+                                    </div>
+                                    <div class="bg-pink p-2 my-2 rounded">
+                                        <p class="m-0 heading"><b>Type : <span class="text-dark"> {{item?.type}}
+                                                </span></b></p>
+                                    </div>
+                                    <div class="bg-pink p-2 my-2 rounded">
+                                        <p class="m-0 heading"><b>state : <span class="text-dark"> {{item.state}}
+                                                </span></b></p>
+                                    </div>
+                                    <div class="bg-pink p-2 my-2 rounded">
+                                        <p class="m-0 heading"><b>Price : <span class="text-dark"> {{item.price}}₹
+                                                </span></b></p>
+                                    </div>
+                                    <div class="bg-pink p-2 my-2 rounded">
+                                        <p class="m-0 heading"><b>Description : <span class="text-dark">
+                                                    {{item.description}} </span></b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary w-100 mb-2" (click)="viewDetails(item)">View
+                                    Property</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center bg-danger my-5" *ngIf="agentProperties.length < 1">
+                        <p class="text-white m-0 p-3"><b>No Properties Uploaded Yet!!</b></p>
+                    </div>
+                </div>
+                <div class="card p-3 shadow mt-5">
                     <div class="card-body">
-                        <h4>About Michaela Finney</h4>
+                        <p class="fs-5">About <b>{{agentName}}</b></p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta justo eget risus
                             consectetur, non venenatis elit blandit. Mauris vehicula, libero a iaculis fringilla, ipsum
                             ipsum tincidunt velit, ut convallis velit ante tincidunt dui. Sed iaculis ullamcorper
@@ -41,10 +103,21 @@
                             mauris sem, commodo et accumsan ac, dictum vitae sem. Sed bibendum nunc neque, in auctor
                             enim ultricies nec. Proin ornare nibh libero, id euismod nulla aliquam et. Nam eget augue ut
                             dolor sagittis feugiat. Nullam et nibh id lacus mollis laoreet eu et mi.</p>
-                            <p><b>Language:</b> English, Spanish, French</p>
+                        <p><b>Language:</b> English, Spanish, French</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
+<p-dialog header="" [(visible)]="visible" [style]="{width: '40vw'}">
+    <div class="text-center py-3 px-2">
+        <div class=" text-center bg-danger p-2 mx-5">
+            <a href="javascript:void(0)" class="text-white fs-4"><i class="fas fa-warning"></i></a>
+            <h6 class="text-center my-4">Please login yourself to contact your agent !!!</h6>
+        </div>
+        <button class="btn btn-outline-primary w-100 mt-4" routerLink="/login">Login yourself</button>
+    </div>
+</p-dialog>

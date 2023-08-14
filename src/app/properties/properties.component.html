@@ -1,209 +1,227 @@
-<section class="hero-section mb-3">
+<section class="hero-section">
   <div class="hero-section-content">
     <h2 class="mb-3">Properties</h2>
   </div>
 </section>
 
 
+<section class="properties p-5">
+  <div class="container">
+    <p class="mb-4 fs-4 text-center"><b>All Properties Listings</b></p>
 
-<div class="container mt-5">
-  <section>
-    <div class="row">
-      <div class="col-lg-6 p-4">
-        <h2><b>Creating Opportunities. Building Your Future.</b></h2>
-        <p>
-          Browse for the perfect place to live by looking through listings, areas, neighborhoods, and insider tips
-          provided by residents. I assist my customers in getting to the heart of their real estate demands, desires,
-          and outcomes. I'm in this for the long term.
+    <ul class="nav">
+      <li class="nav-item px-3 py-2">
+        <a href="javascript:void(0)" class="nav-link" [ngClass]="activeTab == 'allTab'?'active':''"
+          (click)="navigateTo('allTab')">All Properties</a>
+      </li>
+      <li class="nav-item px-3 py-2">
+        <a href="javascript:void(0)" class="nav-link" [ngClass]="activeTab == 'rentTab'?'active':''"
+          (click)="navigateTo('rentTab')">Rental Properties</a>
+      </li>
+      <li class="nav-item px-3 py-2">
+        <a href="javascript:void(0)" class="nav-link" [ngClass]="activeTab == 'sellTab'?'active':''"
+          (click)="navigateTo('sellTab')">Buy Properties</a>
+      </li>
+    </ul>
+
+    <div class="row mb-5" *ngIf="activeTab == 'allTab'">
+      <div class="col-lg-3 mt-4" *ngFor="let item of propertiesArray; let i = index">
+        <div class="card m-3 h-100 shadow">
+          <img src="assets/images/home--3.jpg" class="img-fluid" alt="..." />
+          <span class="badge bg-primary px-3 py-2 text-dark">{{item.category}}</span>
+          <div class="card-body p-0">
+            <div class="card-content p-3">
+              <div class="row">
+                <div class="col-lg-9 text-start">
+                  <h6 class="mb-2"><b>{{item.propertyName}}</b></h6>
+                </div>
+                {{item.isFavoriteProperty}}
+                <div class="col-lg-3 text-end">
+                  <div class="tooltip-container">
+                    <span class="tooltip">Add to favorites</span>
+                    <a href="javascript:void(0)" class="text-dark fs-5" (click)="addPropertyToFavorites(item)"><i
+                        class="fas fa-heart-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Type : <span class="text-dark"> {{item?.type}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>state : <span class="text-dark"> {{item.state}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Price : <span class="text-dark"> {{item.price}}₹ </span></b></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary w-100 mb-2" (click)="viewDetails(item)">View Property</button>
+            <button class="btn btn-outline-primary w-100" [attr.data-bs-toggle]="isLogin ? 'modal' : ''"
+              [attr.data-bs-target]="isLogin ? '#deleteProductsModal' : ''" (click)="contactAgent(item)">Contact Agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5" *ngIf="activeTab == 'rentTab'">
+      <div class="col-lg-3 mt-4" *ngFor="let item of rentPropertiesArray; let i = index">
+        <div class="card m-3 h-100 shadow">
+          <img src="assets/images/home--4.jpg" class="img-fluid" alt="..." />
+          <span class="badge bg-primary px-3 py-2 text-dark">{{item.category}}</span>
+
+          <div class="card-body p-0">
+            <div class="card-content p-3">
+              <div class="row">
+                <div class="col-lg-9 text-start">
+                  <h6 class="mb-2"><b>{{item.propertyName}}</b></h6>
+                </div>
+                {{item.isFavoriteProperty}}
+                <div class="col-lg-3 text-end">
+                  <div class="tooltip-container">
+                    <span class="tooltip">Add to favorites</span>
+                    <a href="javascript:void(0)" class="text-dark fs-5" (click)="addPropertyToFavorites(item)"><i
+                        class="fas fa-heart-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Type : <span class="text-dark"> {{item?.type}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>state : <span class="text-dark"> {{item.state}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Price : <span class="text-dark"> {{item.price}}₹ </span></b></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary w-100 mb-2" (click)="viewDetails(item)">View Property</button>
+            <button class="btn btn-outline-primary w-100" [attr.data-bs-toggle]="isLogin ? 'modal' : ''"
+              [attr.data-bs-target]="isLogin ? '#deleteProductsModal' : ''" (click)="contactAgent(item)">Contact Agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5" *ngIf="activeTab == 'sellTab'">
+      <div class="col-lg-3 mt-4" *ngFor="let item of sellPropertiesArray; let i = index">
+        <div class="card m-3 h-100 shadow">
+          <img src="assets/images/home--6.jpg" class="img-fluid" alt="..." />
+          <span class="badge bg-primary px-3 py-2 text-dark">{{item.category}}</span>
+
+          <div class="card-body p-0">
+            <div class="card-content p-3">
+              <div class="row">
+                <div class="col-lg-9 text-start">
+                  <h6 class="mb-2"><b>{{item.propertyName}}</b></h6>
+                </div>
+                <div class="col-lg-3 text-end">
+                  <div class="tooltip-container">
+                    <span class="tooltip">Add to favorites</span>
+                    <a href="javascript:void(0)" class="text-dark fs-5" (click)="addPropertyToFavorites(item)"><i
+                        class="fas fa-heart-circle"></i></a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Type : <span class="text-dark"> {{item?.type}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2">
+                <p class="m-0 heading"><b>state : <span class="text-dark"> {{item.state}} </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2">
+                <p class="m-0 heading"><b>Price : <span class="text-dark"> {{item.price}}₹ </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b> : <span class="text-dark"> {{item.description}} </span></b></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary w-100 mb-2" (click)="viewDetails(item)">View Property</button>
+            <button class="btn btn-outline-primary w-100" [attr.data-bs-toggle]="isLogin ? 'modal' : ''"
+              [attr.data-bs-target]="isLogin ? '#deleteProductsModal' : ''" (click)="contactAgent(item)">Contact Agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="modal fade p-0" id="deleteProductsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- : <span class="text-danger"> <b>{{agentName}}</b></span> -->
+        <p class="text-center m-0"><b>Contact Your Agent</b>
         </p>
+        <button type="button" class="btn-close p-2 closebtnofArtist" data-bs-dismiss="modal"
+          aria-label="Close"></button>
       </div>
-      <div class="col-lg-6 p-4">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body text-center">
-                <h3>12+</h3>
-                <p>Experience</p>
+      <div class="modal-body p-4">
+        <form class="" *ngIf="contactAgentForm">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName" />
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body text-center">
-                <h3>1500+</h3>
-                <p>Satisfied Clients</p>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Enter Email" formControlName="email" />
               </div>
             </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="number" class="form-control" placeholder="Enter Mobile" formControlName="mobileNumber" />
+              </div>
+            </div>
+
+            <button class="btn btn-primary w-100" (click)="submitForm()">Verify OTP sent to your E-mail</button>
+
           </div>
+        </form>
+
+        <div *ngIf="!contactAgentForm" class="p-3 otpForm">
+          <form [formGroup]="otpForm">
+            <div class="text-center p-2 m-2">
+              <label class="">Enter OTP :</label>
+            </div>
+            <div class="form-group">
+              <div class="otp-inputs text-center">
+                <input type="text" id="otp1" formControlName="otp1" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 2)">
+                <input type="text" id="otp2" formControlName="otp2" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 3)">
+                <input type="text" id="otp3" formControlName="otp3" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 4)">
+                <input type="text" id="otp4" formControlName="otp4" class="form-control mx-2" maxlength="1">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-info w-100" [disabled]="!otpForm.valid">Submit</button>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-  <section class="py-5">
-    <h1 class="mb-4">Properties</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Property Card 1 -->
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card m-3">
-          <img src="assets/images/home-18.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace
-                neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 </div>
+
+
+<p-dialog header="" [(visible)]="visible" [style]="{width: '40vw'}">
+  <div class="text-center py-3 px-2">
+    <div class=" text-center bg-danger p-2 mx-5">
+      <a href="javascript:void(0)" class="text-white fs-4"><i class="fas fa-warning"></i></a>
+      <h6 class="text-center my-4">Please login yourself to contact your agent !!!</h6>
+    </div>
+    <button class="btn btn-outline-primary w-100 mt-4" routerLink="/login">Login yourself</button>
+  </div>
+</p-dialog>

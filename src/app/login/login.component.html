@@ -1,56 +1,145 @@
-<section class="signup-section">
-    <img src="../../assets/images/home-18.jpg" alt="" class="img-fluid">
-    <div class="container-fluid">
-        <div class="card p-4">
+<section class="login-section">
+    <div class="container-fluid py-3">
+        <div class="card px-2 pt-2">
+            <div class="text-center bg-dark p-3">
+                <h6 class="welcome text-white"><b>Welcome to <span class="navbar-brand fs-4 mx-2">PremNivas</span>  Real Estate Real Experts !!</b></h6>
+                <p class="m-0 text-white">Login yourself and find a better place and property to live !!!</p>
+            </div>
             <div class="card-body">
-                <h4 class="heading py-3">Sign into your account</h4>
-                <form class="mb-3" [formGroup]="loginForm">
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Username or Email"
-                            formControlName="email" />
-                        <div class="mt-2"
-                            *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
-                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="heading py-3">Sign into your account</h4>
+                        <form class="mb-3" [formGroup]="loginForm">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="emailInput"
+                                    placeholder="Enter Username or Email" formControlName="email" />
+                                <div class="mt-2"
+                                    *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
+                                    <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                                </div>
+                                <div class="mt-2"
+                                    *ngIf="loginForm.controls['email'].hasError('pattern') && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+                                    <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="passwordInput"
+                                    placeholder="Enter password" formControlName="password" />
+                                <div class="mt-2"
+                                    *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+                                    <span class="text-danger"><b>*Please Enter Your Password</b></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary shadow w-100" (click)="login()"
+                                    [disabled]="loginForm.invalid">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center my-3">
+                            <span>Or</span>
                         </div>
-                        <div class="mt-2"
-                            *ngIf="loginForm.controls['email'].hasError('pattern') && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
-                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                        <div class="text-center mt-4">
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-google"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-instagram"></i></a>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password"
-                            formControlName="password" />
-                        <div class="mt-2"
-                            *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
-                            <span class="text-danger"><b>*Please Enter Your Password</b></span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-info px-3 py-2 w-100" (click)="login()" [disabled]="loginForm.invalid">Login</button>
-                    </div>
-                </form>
 
+                        <div class="row mt-5">
+                            <div class="col-lg-4 offset-lg-2 text-center mb-3">
+                                <a href="javascript:void(0)" routerLink="/signup">Register Here</a>
+                            </div>
+                            <div class="col-lg-4 text-center mb-3">
+                                <a href="javascript:void(0)" (click)="openForgotModal()" data-bs-toggle="modal"
+                                    data-bs-target="#deleteProductsModal">Forget Password</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center signup-img">
+                        <img src="../../assets/images/team--1.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <button class="btn btn-primary py-2 w-50 m-2" routerLink="/agent/agent-login">Go to Agent Login</button>
 
-                <div class="container text-center mb-3">
-                    <span>Or</span>
-                </div>
-                <div class="text-center">
-                    <a href="javascript:void(0)"><i class="fa-brands fa-facebook me-4"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-twitter me-4"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-google me-4"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-instagram me-4"></i></a>
-                </div>
-                <div class="row my-4">
-                    <div class="col-lg-6 text-start mt-3">
-                        <a href="javascript:void(0)" routerLink="/signup">Register Here</a>
-                    </div>
-                    <div class="col-lg-6 text-end mt-3">
-                        <a href="javascript:void(0)">Forget Password</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </section>
 
 <p-toast position="top-right"></p-toast>
+
+<div class="modal fade p-0" id="deleteProductsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="text-center m-0"><b>Recover Your Password </b> </p>
+                <button type="button" class="btn-close p-2 closebtnofArtist" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form class="" *ngIf="recoverPassForm">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Enter Email"
+                                    formControlName="email" />
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100" (click)="sendOtp()">Verify OTP sent to your
+                            E-mail</button>
+                    </div>
+                </form>
+
+                <div *ngIf="otpFields" class="p-3 otpForm">
+                    <form [formGroup]="otpForm">
+                        <div class="text-center p-2 m-2">
+                            <label class="">Enter OTP :</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="otp-inputs text-center">
+                                <input type="text" id="otp1" formControlName="otp1" class="form-control mx-2"
+                                    maxlength="1" (input)="handleInput($event, 2)">
+                                <input type="text" id="otp2" formControlName="otp2" class="form-control mx-2"
+                                    maxlength="1" (input)="handleInput($event, 3)">
+                                <input type="text" id="otp3" formControlName="otp3" class="form-control mx-2"
+                                    maxlength="1" (input)="handleInput($event, 4)">
+                                <input type="text" id="otp4" formControlName="otp4" class="form-control mx-2"
+                                    maxlength="1">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100"
+                            (click)="changePassword()">Submit</button>
+                    </form>
+                </div>
+
+                <form class="" *ngIf="changepassword">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Enter New Password"
+                                    formControlName="password" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Confirm New Password"
+                                    formControlName="password" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                              <button class="btn btn-info w-100">Change Password</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+             
+            </div>
+        </div>
+    </div>
+</div>

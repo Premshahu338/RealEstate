@@ -1,261 +1,168 @@
 <section class="signup-section">
-    <img src="../../assets/images/home--3.jpg" alt="" class="img-fluid">
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
+    <div class="container-fluid py-3">
+        <div class="card px-2 pt-2">
+            <div class="text-center bg-dark p-3">
+                <h4><b>Welcome to <span class="navbar-brand fs-4">PremNivas</span></b></h4>
                 <div class="text-center">
-                    <p class="p-3"><i>"Welcome to our world of beautiful homes and stunning views. We're
+                    <p><i>"Welcome to our world of beautiful homes and stunning views. We're
                             excited to help you find your dream property"</i></p>
+                            <p> <b>Register Yourself Here</b></p>
                 </div>
-                <!-- <form class="mb-3" [formGroup]="signUpForm">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="firstNameInput" placeholder="Enter first name" formControlName="firstName" />
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="lastNameInput" placeholder="Enter last name" formControlName="lastName"/>
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter email" formControlName="email" />
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" class="form-control" id="mobileNumber" placeholder="Enter Mobile Number" formControlName="mobileNumber" />
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" formControlName="password"/>
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" id="confirmPasswordInput"
-                            placeholder="Confirm password" formControlName="confirmPassword" />
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-info px-3 py-2 w-100" (click)="signup()">Sign Up</button>
-                    </div>
-                </form> -->
+            </div>
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <ul class="nav nav-tabs card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="user-tab" data-bs-toggle="tab"
-                                    href="#user-registration">User</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="agent-tab" data-bs-toggle="tab"
-                                    href="#agent-registration">Agent</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="user-registration">
-                                <h4 class="heading p-3 mt-2 text-center">Register as User</h4>
-                                <form class="mb-3" [formGroup]="signUpForm">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" id="firstNameInput"
-                                            placeholder="Enter first name" formControlName="firstName" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['firstName'].hasError('required') && signUpForm.controls['firstName'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your First Name</b></span>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-tabs card-header-tabs text-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="user-tab" data-bs-toggle="tab"
+                                            href="#user-registration">User</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="agent-tab" data-bs-toggle="tab"
+                                            href="#agent-registration">Agent</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="user-registration">
+                                        <h4 class="heading p-3 mt-2 text-center">Register as User</h4>
+                                        <form class="mb-3" [formGroup]="signUpForm">
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control" id="firstNameInput"
+                                                    placeholder="Enter first name" formControlName="firstName" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['firstName'].hasError('required') && signUpForm.controls['firstName'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your First
+                                                            Name</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control" id="lastNameInput"
+                                                    placeholder="Enter last name" formControlName="lastName" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['lastName'].hasError('required') && signUpForm.controls['lastName'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Last Name</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="email" class="form-control" id="emailInput"
+                                                    placeholder="Enter email" formControlName="email" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                                                </div>
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['email'].hasError('pattern') && (signUpForm.controls['email'].touched || signUpForm.controls['email'].dirty)">
+                                                    <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control" id="mobileNumber"
+                                                    placeholder="Enter Mobile Number" formControlName="mobileNumber" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['mobileNumber'].hasError('required') && signUpForm.controls['mobileNumber'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Mobile
+                                                            No.</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" id="passwordInput"
+                                                    placeholder="Enter password" formControlName="password" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your password</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" id="confirmPasswordInput"
+                                                    placeholder="Confirm password" formControlName="confirmPassword" />
+                                                <div class="mt-2"
+                                                    *ngIf="signUpForm.controls['confirmPassword'].hasError('required') && signUpForm.controls['confirmPassword'].touched">
+                                                    <span class="text-danger"><b>*Please Confirm Your
+                                                            password</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button class="btn btn-info px-3 py-2 w-100" (click)="userSignup()">Sign
+                                                    Up</button>
+                                            </div>
+                                        </form>
+                                        <div class="text-center p-2">
+                                            <p>Already have an account ?<a href="javascript:void(0)"
+                                                    routerLink="/login"> User
+                                                    Login</a></p>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" id="lastNameInput"
-                                            placeholder="Enter last name" formControlName="lastName" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['lastName'].hasError('required') && signUpForm.controls['lastName'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Last Name</b></span>
+                                    <div class="tab-pane fade" id="agent-registration">
+                                        <h4 class="heading p-3 text-center mt-2">Register as Agent</h4>
+                                        <form class="mb-3" [formGroup]="agentSignUpForm">
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control" id="firstNameInput"
+                                                    placeholder="Enter full name" formControlName="fullName" />
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['fullName'].hasError('required') && agentSignUpForm.controls['fullName'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Full Name</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="email" class="form-control" id="emailInput"
+                                                    placeholder="Enter email" formControlName="email" />
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['email'].hasError('required') && agentSignUpForm.controls['email'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                                                </div>
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['email'].hasError('pattern') && (agentSignUpForm.controls['email'].touched || agentSignUpForm.controls['email'].dirty)">
+                                                    <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control" id="mobileNumber"
+                                                    placeholder="Enter Mobile Number" formControlName="mobileNumber" />
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['mobileNumber'].hasError('required') && agentSignUpForm.controls['mobileNumber'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your Mobile
+                                                            No.</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" id="passwordInput"
+                                                    placeholder="Enter password" formControlName="password" />
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['password'].hasError('required') && agentSignUpForm.controls['password'].touched">
+                                                    <span class="text-danger"><b>*Please Enter Your password</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" id="confirmPasswordInput"
+                                                    placeholder="Confirm password" formControlName="confirmPassword" />
+                                                <div class="mt-2"
+                                                    *ngIf="agentSignUpForm.controls['confirmPassword'].hasError('required') && agentSignUpForm.controls['confirmPassword'].touched">
+                                                    <span class="text-danger"><b>*Please Confirm Your
+                                                            password</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button class="btn btn-info px-3 py-2 w-100"
+                                                    (click)="agentSignup()">Sign
+                                                    Up</button>
+                                            </div>
+                                        </form>
+                                        <div class="text-center p-2">
+                                            <p>Already have an account ?<a href="javascript:void(0)"
+                                                    routerLink="/agent/agent-login"> Login As Agent</a></p>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" id="emailInput"
-                                            placeholder="Enter email" formControlName="email" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
-                                        </div>
-                                        <div class="mt-2"
-                                            *ngIf="signUpForm.controls['email'].hasError('pattern') && (signUpForm.controls['email'].touched || signUpForm.controls['email'].dirty)">
-                                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="number" class="form-control" id="mobileNumber"
-                                            placeholder="Enter Mobile Number" formControlName="mobileNumber" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['mobileNumber'].hasError('required') && signUpForm.controls['mobileNumber'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Mobile No.</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" id="passwordInput"
-                                            placeholder="Enter password" formControlName="password" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your password</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" id="confirmPasswordInput"
-                                            placeholder="Confirm password" formControlName="confirmPassword" />
-                                            <div class="mt-2"
-                                            *ngIf="signUpForm.controls['confirmPassword'].hasError('required') && signUpForm.controls['confirmPassword'].touched">
-                                            <span class="text-danger"><b>*Please Confirm Your password</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-info px-3 py-2 w-100" (click)="userSignup()">Sign Up</button>
-                                    </div>
-                                </form>
-                                <div class="text-center p-2">
-                                    <p>Already have an account ?<a href="javascript:void(0)" routerLink="/login"> User Login</a></p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="agent-registration">
-                                <h4 class="heading p-3 text-center mt-2">Register as Agent</h4>
-                                <form class="mb-3" [formGroup]="agentSignUpForm">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" id="firstNameInput"
-                                            placeholder="Enter full name" formControlName="fullName" />
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['fullName'].hasError('required') && agentSignUpForm.controls['fullName'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Full Name</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" id="emailInput"
-                                            placeholder="Enter email" formControlName="email" />
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['email'].hasError('required') && agentSignUpForm.controls['email'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
-                                        </div>
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['email'].hasError('pattern') && (agentSignUpForm.controls['email'].touched || agentSignUpForm.controls['email'].dirty)">
-                                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="number" class="form-control" id="mobileNumber"
-                                            placeholder="Enter Mobile Number" formControlName="mobileNumber" />
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['mobileNumber'].hasError('required') && agentSignUpForm.controls['mobileNumber'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your Mobile No.</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" id="passwordInput"
-                                            placeholder="Enter password" formControlName="password" />
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['password'].hasError('required') && agentSignUpForm.controls['password'].touched">
-                                            <span class="text-danger"><b>*Please Enter Your password</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" id="confirmPasswordInput"
-                                            placeholder="Confirm password" formControlName="confirmPassword" />
-                                        <div class="mt-2"
-                                            *ngIf="agentSignUpForm.controls['confirmPassword'].hasError('required') && agentSignUpForm.controls['confirmPassword'].touched">
-                                            <span class="text-danger"><b>*Please Confirm Your password</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-info px-3 py-2 w-100" (click)="agentSignup()">Sign Up</button>
-                                    </div>
-                                </form>
-                                <div class="text-center p-2">
-                                    <p>Already have an account ?<a href="javascript:void(0)" routerLink="/agent/agent-login"> Login As Agent</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 text-center signup-img">
+                        <img src="../../assets/images/team--1.jpg" alt="" class="img-fluid">
+                    </div>
                 </div>
             </div>
-
-            
         </div>
     </div>
-
 </section>
-<!-- <div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="user-tab" data-bs-toggle="tab"
-                                href="#user-registration">User</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="agent-tab" data-bs-toggle="tab" href="#agent-registration">Agent</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="user-registration">
-                            <h5 class="card-title">User Registration</h5>
-                            <h4 class="heading py-3">Create an account</h4>
-                            <form class="mb-3" [formGroup]="signUpForm">
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="firstNameInput"
-                                        placeholder="Enter first name" formControlName="firstName" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="lastNameInput"
-                                        placeholder="Enter last name" formControlName="lastName" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email"
-                                        formControlName="email" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="number" class="form-control" id="mobileNumber"
-                                        placeholder="Enter Mobile Number" formControlName="mobileNumber" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" id="passwordInput"
-                                        placeholder="Enter password" formControlName="password" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" id="confirmPasswordInput"
-                                        placeholder="Confirm password" formControlName="confirmPassword" />
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-info px-3 py-2 w-100" (click)="signup()">Sign Up</button>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="tab-pane fade" id="agent-registration">
-                            <h5 class="card-title">Agent Registration</h5>
-                            <h4 class="heading py-3">Create an account</h4>
-                            <form class="mb-3" [formGroup]="signUpForm">
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="firstNameInput"
-                                        placeholder="Enter first name" formControlName="fullName" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email"
-                                        formControlName="email" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="number" class="form-control" id="mobileNumber"
-                                        placeholder="Enter Mobile Number" formControlName="mobileNumber" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" id="passwordInput"
-                                        placeholder="Enter password" formControlName="password" />
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" id="confirmPasswordInput"
-                                        placeholder="Confirm password" formControlName="confirmPassword" />
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-info px-3 py-2 w-100" (click)="signup()">Sign Up</button>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

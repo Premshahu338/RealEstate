@@ -13,7 +13,8 @@
 
 a {
   // font-family: "Poppins", sans-serif;
-  font-family: "Prata", Sans-serif;;
+  font-family: "Prata", Sans-serif;
+  ;
   color: #333333;
 }
 
@@ -23,7 +24,7 @@ a {
 // }
 
 .bg-light {
-  background-color:var(--background-color)!important;
+  background-color: #ffffff !important;
 }
 
 :root {
@@ -36,7 +37,7 @@ a {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: #fff;
   color: var(--text-color);
 }
 
@@ -44,11 +45,24 @@ a {
   color: var(--primary-color);
 }
 
-.card{
+.card {
   border: none;
   border-radius: 0;
 }
 
+// .card:hover {
+//   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+//   transition: all 0.5s ease-in-out;
+// }
+
+.btn-logout,
+.btn-light{
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.6) !important;
+}
+
+.form-control{
+  border-color: #bcbdbe !important;
+}
 .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
@@ -71,14 +85,62 @@ a {
   color: var(--text-color);
 }
 
-.modal-dialog {
-  max-width: 65vw !important;
-  margin: 7.75rem auto !important;
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
 }
 
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #FCD901;
+  color: #000000;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 128%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: none;
+}
+
+.backdrop.active {
+  display: block;
+}
+
+// .modal-dialog {
+//   max-width: 65vw !important;
+//   margin: 7.75rem auto !important;
+// }
+
 .btn-dark {
-  background-color: #4973d0 !important;
-  border-color: #4d77d0 !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.navbar-brand {
+  color: #ff9249 !important;
 }
 
 // .dropdown:hover > .dropdown-menu {
@@ -86,3 +148,93 @@ a {
 //   top: 122% !important;
 //   right: 1% !important;
 // }
+
+@media (max-width: 1199px) {
+  /* Styles for small desktop screens */
+}
+
+
+@media (max-width: 991px) {
+  /* Styles for tablets */
+
+}
+
+
+@media (max-width: 767px) {
+  .hero-section-content {
+    position: absolute !important;
+    top: 60% !important;
+    left: 50% !important;
+  }
+
+  .contact-box {
+    position: absolute !important;
+    left: 0% !important;
+    top: 1% !important;
+  }
+
+  .about-us {
+    .img-fluid {
+      width: 100% !important;
+    }
+  }
+
+  .meadia-btn {
+    width: 100% !important;
+  }
+
+  .navbar-ul {
+    position: absolute !important;
+    right: 10% !important;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .signup-img {
+    display: none !important;
+  }
+
+  .navbar-ul {
+    position: absolute !important;
+    top: 20% !important;
+    right: 24% !important;
+  }
+
+  .nav-tabs .nav-item {
+    width: 100% !important;
+    margin: 10px !important;
+  }
+
+  .navbar-brand {
+    margin: 0 !important;
+  }
+
+  .properties {
+    padding: 10px !important;
+  }
+
+  .otpForm form input {
+    width: 39px !important;
+    height: 40px !important;
+  }
+
+  .welcome {
+    line-height: 1.4 !important;
+  }
+
+  textarea {
+    width: 100% !important;
+    border: 0.2px solid #000000 !important;
+  }
+
+  .btn-info {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .ui-toast-message {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    padding: 10px !important;
+  }
+}

@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { ListingsComponent } from './listings/listings.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
@@ -18,7 +17,7 @@ import { AgentsProfileComponent } from './agents-profile/agents-profile.componen
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { AgentModule } from './agent/agent.module';
-
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,6 @@ import { AgentModule } from './agent/agent.module';
     PropertiesComponent,
     AboutusComponent,
     ContactusComponent,
-    ListingsComponent,
     SignupComponent,
     AgentsComponent,
     LoginComponent,
@@ -43,7 +41,8 @@ import { AgentModule } from './agent/agent.module';
     FormsModule,
     AgentModule,
     ToastModule,
-    DropdownModule
+    DropdownModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

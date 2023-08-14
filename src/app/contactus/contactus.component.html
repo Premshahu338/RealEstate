@@ -1,61 +1,71 @@
+<section class="hero-section">
+  <div class="hero-section-content">
+    <h2 class="mb-3"><b>Contact Us</b></h2>
+  </div>
+</section>
+
 <div class="container my-5">
-  <div class="row mt-5">
-    <div class="col-md-6 mt-5">
-      <h2>Contact Us</h2>
-      <p class="lead">
-        Have a question or need more information? Fill out the form below and
-        we'll get back to you as soon as possible.
-      </p>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Enter your name"
-            required
-          />
+  <p>If you prefer to communicate online, please take a moment to complete the contact form below, and one of our
+    representatives will get back to you promptly. We strive to respond to all inquiries within 24 hours.</p>
+
+    <p>We understand that buying or selling a property is a significant decision, and we are here to assist you every
+      step of the way. Our experienced real estate professionals are dedicated to providing you with exceptional service
+      and personalized attention. Whether you have questions about a property listing, need assistance with financing
+      options, or require guidance on the selling process, we are here to help.</p>
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <form [formGroup]="contactUsForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your full name"
+                formControlName="fullName" />
+                <div class="mt-2"
+                *ngIf="contactUsForm.controls['fullName'].hasError('required') && contactUsForm.controls['fullName'].touched">
+                <span class="text-danger"><b>*Please Enter Your Full Name</b></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                formControlName="email" />
+              <div class="mt-2"
+                *ngIf="contactUsForm.controls['email'].hasError('required') && contactUsForm.controls['email'].touched">
+                <span class="text-danger"><b>*Please Enter Your Email</b></span>
+              </div>
+              <div class="mt-2"
+                *ngIf="contactUsForm.controls['email'].hasError('pattern') && (contactUsForm.controls['email'].touched || contactUsForm.controls['email'].dirty)">
+                <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"
+                formControlName="mobileNumber" />
+                <div class="mt-2"
+                *ngIf="contactUsForm.controls['mobileNumber'].hasError('required') && contactUsForm.controls['mobileNumber'].touched">
+                <span class="text-danger"><b>*Please Enter Your Mobile No.</b></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"
+                formControlName="message"></textarea>
+                <div class="mt-2"
+                *ngIf="contactUsForm.controls['message'].hasError('required') && contactUsForm.controls['message'].touched">
+                <span class="text-danger"><b>*Please Enter Your Message</b></span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3" (click)="contactUs()" [disabled]="contactUsForm.invalid">Submit</button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Enter your email"
-            required
-          />
+        <div class="col-md-6">
+          <img src="../../assets/images/home--6.jpg" alt="Real Estate Team" class="img-fluid w-100" />
         </div>
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone</label>
-          <input
-            type="tel"
-            class="form-control"
-            id="phone"
-            placeholder="Enter your phone number"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea
-            class="form-control"
-            id="message"
-            rows="5"
-            placeholder="Enter your message"
-            required
-          ></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <div class="col-md-6 mt-5">
-        <img
-          src="https://via.placeholder.com/600x400"
-          alt="Real Estate Team"
-          class="img-fluid rounded"
-        />
       </div>
+    </div>
+
   </div>
   <div class="row">
     <div class="mapouter">
@@ -82,3 +92,4 @@
     </div>
   </div>
 </div>
+<p-toast position="top-right"></p-toast>

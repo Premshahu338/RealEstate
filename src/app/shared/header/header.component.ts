@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { GlobalService } from 'src/app/service/global.service';
@@ -10,12 +10,25 @@ import { GlobalService } from 'src/app/service/global.service';
   providers:[MessageService]
 })
 export class HeaderComponent {
-
+  
   constructor(private router: Router, private global: GlobalService,private messageService: MessageService) { }
+  isNavbarWhite = false;
+  isNavbarOpen: boolean = false;
 
-
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isNavbarWhite = window.pageYOffset > 50; // Adjust the value as per your requirement
+  }
+  
   ngOnInit() {
 
+  }
+
+  toggleNavbar() {
+    console.log('kkkk');
+    
+    this.isNavbarOpen = !this.isNavbarOpen;
   }
 
   login(){
@@ -34,7 +47,7 @@ export class HeaderComponent {
     setTimeout(() => {
       window.location.reload()
     },500);
-    // this.router.navigate(['/login'])
+    this.router.navigate(['/'])
   }
 
 

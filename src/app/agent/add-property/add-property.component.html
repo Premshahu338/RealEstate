@@ -3,12 +3,12 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h5>Add Category</h5>
+                    <h5>Add property</h5>
                     <button class="btn btn-info float-end ms-3" routerLink="/agent/agent-home">
                         Go Back <i class="fa fa-arrow-left"></i>
                     </button>
                     <button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
-                        Add Category <i class="fa fa-plus"></i>
+                        Add Property <i class="fa fa-plus"></i>
                     </button>
                 </div>
                 <div class="card-body">
@@ -19,28 +19,39 @@
                                     <th>Sr. No</th>
                                     <th>Property Name</th>
                                     <th>Property Image</th>
-                                    <th>City</th>
+                                    <th>Category</th>
+                                    <th>State</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Amazing property</td>
+                                <tr *ngFor="let item of propertiesArray;let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.propertyName}}</td>
                                     <td>
                                         <div class="text-center">
-                                            <img src="../../../assets/images/agent-1.jpg" alt="" class="img-fluid"
-                                                width="200">
+                                            <img src="../../../assets/images/home--3.jpg" alt="" class="img-fluid"
+                                                width="150">
                                         </div>
                                     </td>
-                                    <td>Mumbai</td>
+                                    <td>{{item.category}}</td>
+                                    <td>{{item.state}}</td>
+                                    <td>{{item.type}}</td>
+                                    <td>{{item.price}}</td>
+                                    <td class="text-center" [width]="400">
+                                        <!-- <textarea name="" id="" cols="40" rows="5">{{item.description}}</textarea> -->
+                                        <span>{{item.description}}</span>
+                                    </td>
                                     <td>
                                         <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#editCategoryModal">
+                                            data-bs-target="#editCategoryModal" (click)="getData(item)">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="javascript:void(0)" data-bs-toggle="modal"
-                                            data-bs-target="#deleteCategoryModal">
+                                            data-bs-target="#deleteCategoryModal" (click)="getData(item)">
                                             <i class="fa fa-trash mx-2"></i>
                                         </a>
                                     </td>
@@ -61,20 +72,21 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Add Category</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Add Property</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="addCategoryForm" class="form theme-form">
+                <form [formGroup]="addPropertyForm" class="form theme-form">
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput1">Property Name</label>
-                                <input class="form-control" id="exampleFormControlInput1" type="text"
-                                    formControlName="categoryName" placeholder="Enter Category Name">
+                                <label class="form-label">Property Name</label>
+                                <input class="form-control" type="text"
+                                    formControlName="propertyName"
+                                    placeholder="Enter Property Name">
                                 <div class="mt-2"
-                                    *ngIf="addCategoryForm.controls['categoryName'].hasError('required') && addCategoryForm.controls['categoryName'].touched">
-                                    <span class="text-danger">Please Enter Category Name</span>
+                                    *ngIf="addPropertyForm.controls['propertyName'].hasError('required') && addPropertyForm.controls['propertyName'].touched">
+                                    <span class="text-danger">Please Enter property Name</span>
                                 </div>
                             </div>
                         </div>
@@ -82,33 +94,75 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput1">Select State</label>
-                                <select name="" id="" class="form-select">
-                                    <option value="----select staes----">----select staes----</option>
-                                    <option value="" *ngFor="let item of statesInIndia">{{item.state}}</option>
+                                <label class="form-label">Select State</label>
+                                <select id="" class="form-select" formControlName="state">
+                                    <option value="" disabled>----- Select state -----</option>
+                                    <option *ngFor="let item of statesInIndia" value="{{item.state}}">{{item.state}}</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Select Category</label>
+                                <select name="category" id="" class="form-select" formControlName="category">
+                                    <option value="" disabled>----- Select category -----</option>
+                                    <option value="To Sell">To Sell</option>
+                                    <option value="To Rent">To Rent</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Select Type</label>
+                                <select name="category" id="" class="form-select" formControlName="type">
+                                    <option value="" disabled>----- Select type-----</option>
+                                    <option value="1BHK - Apartment">1BHK - Apartment</option>
+                                    <option value="2BHK - Apartment">2BHK - Apartment</option>
+                                    <option value="3BHK - Apartment">3BHK - Apartment</option>
+                                    <option value="Villa">Villa</option>
+                                    <option value="Bunglow">Bunglow</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Property Price</label>
+                                <input class="form-control" id="exampleFormControlInput1" type="number"
+                                    formControlName="price" name="price" placeholder="Enter Property price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Property Description</label>
+                            </div>
+                            <textarea name="description" id="" cols="40" rows="5"
+                                formControlName="description"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput1">File Upload</label>
                                 <input class="form-control" id="exampleFormControlInput1" #imgInput type="File"
-                                    (change)="imgUploadInput($event)" accept="image/*" formControlName="file">
-                                <div class="mt-2"
-                                    *ngIf="addCategoryForm.controls['file'].hasError('required') && addCategoryForm.controls['file'].touched">
-                                    <span class="text-danger">Please Choose File</span>
-                                </div>
+                                    (change)="imgUploadInput($event)" accept="image/*" formControlName="image"
+                                    name="image">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row mt-3">
                         <div class="col  text-center">
                             <button class="btn btn-primary" type="submit" data-bs-dismiss="modal" aria-label="Close"
-                                (click)="addCategory()" [disabled]="disableSubmitBtn()">Submit</button>
+                                (click)="addProperty()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -127,36 +181,93 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="updateCategoryForm" class="form theme-form">
+                <form [formGroup]="updatePropertyForm" class="form theme-form">
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput1">Category Name</label>
-                                <input class="form-control" id="exampleFormControlInput1" type="text"
-                                    placeholder="Enter Category Name" formControlName="categoryName">
+                                <label class="form-label">Property Name</label>
+                                <input class="form-control" type="text"
+                                    formControlName="propertyName"
+                                    placeholder="Enter Property Name">
                                 <div class="mt-2"
-                                    *ngIf="updateCategoryForm.controls['categoryName'].hasError('required') && updateCategoryForm.controls['categoryName'].touched">
-                                    <span class="text-danger">Please Enter Category Name</span>
+                                    *ngIf="updatePropertyForm.controls['propertyName'].hasError('required') && updatePropertyForm.controls['propertyName'].touched">
+                                    <span class="text-danger">Please Enter property Name</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Select State</label>
+                                <select id="" class="form-select" formControlName="state">
+                                    <option value="" disabled>----- Select state -----</option>
+                                    <option *ngFor="let item of statesInIndia" value="{{item.state}}">{{item.state}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Select Type</label>
+                                <select name="category" id="" class="form-select" formControlName="type">
+                                    <option value="" disabled>----- Select type-----</option>
+                                    <option value="1BHK - Apartment">1BHK - Apartment</option>
+                                    <option value="2BHK - Apartment">2BHK - Apartment</option>
+                                    <option value="3BHK - Apartment">3BHK - Apartment</option>
+                                    <option value="Villa">Villa</option>
+                                    <option value="Bunglow">Bunglow</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Select Category</label>
+                                <select name="category" id="" class="form-select" formControlName="category">
+                                    <option value="----select staes----">----select Category----</option>
+                                    <option value="To Sell">To Sell</option>
+                                    <option value="To Rent">To Rent</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Property Price</label>
+                                <input class="form-control" id="exampleFormControlInput1" type="number"
+                                    formControlName="price" name="price" placeholder="Enter Property price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleFormControlInput1">Property Description</label>
+                            </div>
+                            <textarea name="description" id="" cols="40" rows="5"
+                                formControlName="description"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput1">File Upload</label>
                                 <input class="form-control" id="exampleFormControlInput1" #imgInput type="File"
-                                    (change)="imgUploadInput($event)" accept="image/*" formControlName="file">
+                                    (change)="imgUploadInput($event)" accept="image/*" formControlName="image"
+                                    name="image">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row mt-3">
                         <div class="col  text-center">
                             <button class="btn btn-primary" type="submit" data-bs-dismiss="modal" aria-label="Close"
-                                (click)="updateCategory()"
-                                [disabled]="updateCategoryForm.controls['categoryName'].invalid">Update</button>
+                                (click)="updateProperty()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -183,7 +294,7 @@
             <div class="modal-footer text-end">
                 <button class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
                 <button class="btn btn-danger" type="submit" data-bs-dismiss="modal" aria-label="Close"
-                    (click)="removeCategory()">Delete</button>
+                    (click)="deleteProperty()">Delete</button>
             </div>
         </div>
     </div>

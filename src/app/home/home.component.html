@@ -1,23 +1,80 @@
 <section class="hero-section">
   <div class="hero-section-content mt-3">
-    <h1 class="mb-3">
-      Welcome to our <span class="name">Real Estate</span> Website
-    </h1>
-    <p class="mb-3">
-      We are recognized for exceeding client expectations and delivering great
-      results through dedication, ease of process, and extraordinary services to
-      our worldwide clients.
-    </p>
-    <form class="d-flex mt-5">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control p-3" placeholder="Search your properties" />
-        <button class="btn btn-purple px-5 py-3" id="basic-addon2">Search</button>
+    <div class="card w-100">
+      <div class="card-body">
+        <h6 class="text-danger"><b>Welcome to PremNivas,</b></h6>
+        <p class="mb-3">
+          where we believe in turning dreams into reality. With years of
+          experience in the real estate industry, we are committed to providing exceptional service to our clients.
+        </p>
+        <button href="#" class="btn btn-info px-4 py-2" routerLink="/contactus">
+          Contact Us
+        </button>
       </div>
-    </form>
-    <!-- <button href="#" class="btn-outline-purple px-4 py-2">
-      Browse Listings
-    </button> -->
+    </div>
   </div>
+</section>
+
+<section class="properties-section">
+  <div class="container py-4">
+    <div class="text-center p-3">
+      <h4 class="heading-2">Featured Luxury Property</h4>
+      <p>Create property listings with all the features you'd expect</p>
+    </div>
+    <div class="row mb-5">
+      <div class="col-lg-3 mt-4" *ngFor="let item of propertiesArray; let i = index" [hidden]="i >= 4">
+        <div class="card m-3 h-100 shadow">
+          <img src="assets/images/home--6.jpg" class="img-fluid" alt="..." />
+          <span class="badge bg-primary px-3 py-2 text-dark">{{item.category}}</span>
+
+          <div class="card-body p-0">
+            <div class="card-content p-3">
+              <div class="row">
+                <div class="col-lg-9 text-start">
+                  <h6 class="mb-2"><b>{{item.propertyName}}</b></h6>
+                </div>
+                <div class="col-lg-3 text-end">
+                  <div class="tooltip-container">
+                    <span class="tooltip">Add to favorites</span>
+                    <a href="javascript:void(0)" class="text-dark fs-5" (click)="addPropertyToFavorites(item)"><i
+                        class="fas fa-heart-circle"></i></a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Type : <span class="text-dark"> {{item?.type}}
+                    </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>state : <span class="text-dark"> {{item.state}}
+                    </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Price : <span class="text-dark"> {{item.price}}₹
+                    </span></b></p>
+              </div>
+              <div class="bg-pink p-2 my-2 rounded">
+                <p class="m-0 heading"><b>Description : <span class="text-dark">
+                      {{item.description}} </span></b></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary w-100 mb-2" (click)="viewDetails(item)">View Property</button>
+            <button class="btn btn-outline-primary w-100" [attr.data-bs-toggle]="isLogin ? 'modal' : ''"
+              [attr.data-bs-target]="isLogin ? '#deleteProductsModal' : ''" (click)="contactAgent(item)">Contact Agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-5-4 p-3">
+      <button class="btn btn-danger mt-5" *ngIf="propertiesArray.length > 4" routerLink="/properties">View More
+        Properties <i class="fas fa-arrow-right ms-3"></i></button>
+    </div>
+  </div>
+
 </section>
 
 <section class="our-services p-2">
@@ -31,131 +88,80 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-3">
-        <div class="card">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card shadow">
           <div class="card-body">
             <div class="text-center">
               <h2 class="p-2"><i class="fa-solid fa-house-user"></i></h2>
               <h5 class="p-2"><b>Sell Your Home With Us</b></h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn btn-dark px-4 py-2 border">Read More</button>
+              <!-- <button class="btn btn-primary px-4 py-2 border">Read More</button> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
-        <div class="card">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card shadow">
           <div class="card-body">
             <div class="text-center">
               <h2 class="p-2"><i class="fa-duotone fa-handshake"></i></h2>
               <h5 class="p-2"><b>Evaluate Your Home</b></h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn btn-dark px-4 py-2 border">Read More</button>
+              <!-- <button class="btn btn-primary px-4 py-2 border">Read More</button> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
-        <div class="card">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card shadow">
           <div class="card-body">
             <div class="text-center">
               <h2 class="p-2"><i class="fa-solid fa-user-tie"></i></h2>
               <h5 class="p-2"><b>Get Trusted Agents</b></h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn btn-dark px-4 py-2 border">Read More</button>
+              <!-- <button class="btn btn-primary px-4 py-2 border">Read More</button> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
-        <div class="card">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card shadow">
           <div class="card-body">
             <div class="text-center">
               <h2 class="p-2"><i class="fa-solid fa-scale-balanced"></i></h2>
               <h5 class="p-2"><b>Get Legal Services</b></h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn btn-dark px-4 py-2 border">Read More</button>
+              <!-- <button class="btn btn-primary px-4 py-2 border">Read More</button> -->
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="properties-section">
-  <div class="container my-5">
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="text-center">
-          <h4 class="heading-2">Featured Luxury Property</h4>
-          <p>Create property listings with all the features you'd expect</p>
-        </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+        <h2><b>Creating Opportunities. Building Your Future.</b></h2>
+        <p>
+          Browse for the perfect place to live by looking through listings, areas, neighborhoods, and insider tips
+          provided by residents. I assist my customers in getting to the heart of their real estate demands, desires,
+          and outcomes. I'm in this for the long term.
+        </p>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card m-3">
-          <img src="../../assets/images/home--1.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h3>12+</h3>
+                <p>Experience</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card m-3">
-          <img src="../../assets/images/home--3.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card m-3">
-          <img src="assets/images/home--4.jpg" class="img-fluid" alt="..." />
-          <div class="card-body p-0">
-            <div class="card-content p-3">
-              <h6 class="mb-2"><b>Villa with Amazing Panoramic View</b></h6>
-              <span><b> 5,500,000₹</b></span>
-              <p class="mt-2">Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood
-                ...</p>
-              <div class="row align-items-center">
-                <div class="col-md-7 mt-3">
-                  <a href="javascrip:void(0)" class="me-4"><i class="fas fa-info-circle"></i></a>
-                  <a href="javascript:void(0)"><i class="fas fa-heart"></i></a>
-                </div>
-                <div class="col-md-5">
-                  <button href="#" class="btn btn-purple">View Details</button>
-                </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card bg-primary shadow  w-100">
+              <div class="card-body text-center">
+                <h3>1500+</h3>
+                <p>Satisfied Clients</p>
               </div>
             </div>
           </div>
@@ -166,54 +172,142 @@
 </section>
 
 <section class="about-us p-5">
-  <div class="container my-5">
+  <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <div class="container text-center">
-          <img src="assets/images/home-18.jpg" alt="" class="img-fluid h-100" />
-        </div>
-      </div>
-      <div class="col-lg-6 mt-5">
-        <div class="mt-5">
-          <h3 class="ms-3"><b>Why Work With Us</b></h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-            dicta iure labore veritatis minima id rem tempora, natus quaerat
-            inventore maxime dolores vero consectetur dolorem reiciendis aliquam
-            veniam, maiores quas!
-          </p>
-          <button class="btn btn-info px-3 py-2" routerLink="/aboutus">
+        <h2><b>Why Work With Us</b></h2>
+        <p class="mt-3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+          dicta iure labore veritatis minima id rem tempora, natus quaerat
+          inventore maxime dolores vero consectetur dolorem reiciendis aliquam
+          veniam, maiores quas!
+        </p>
+        <div class="text-center mb-3">
+          <button class="btn btn-primary px-3 py-2 w-100 my-3" routerLink="/aboutus">
             About Us<i class="fas fa-arrow-right ms-3"></i>
           </button>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="assets/images/team--2.jpg" alt="" class="img-fluid w-75" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-us p-5">
+  <div class="container">
+    <div class="text-center">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 contact-box">
+          <p class="fs-5 text-white mb-5"><b>Contact us today if you'd like to know more about how we help buy, sell or
+              rent your home</b>
+          </p>
+          <div class="card shadow">
+            <div class="card-body">
+              <p><b>Schedule a meeting with our team</b></p>
+              <p>Our experts and developers would love to contribute their expertise and insights</p>
+              <form>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName" />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <input type="number" class="form-control" placeholder="Enter Mobile"
+                        formControlName="mobileNumber" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="mb-3">
+                      <input type="email" class="form-control" placeholder="Enter Email" formControlName="email" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="mb-3">
+                      <textarea class="form-control" rows="5" placeholder="Enter your message"
+                        formControlName="message"></textarea>
+                    </div>
+                    <button class="btn btn-outline-primary w-100">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- 
-<section class="contactus-section">
-  <div class="row">
-    <section class="parallax">
-      <div class="parallax-overlay"></div>
-      <div class="parallax-content mb-5">
 
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+<div class="backdrop" [ngClass]="{'active': visible}">
+  <p-dialog header="" [(visible)]="visible" [style]="{width: '40vw'}">
+    <div class="text-center py-3 px-2">
+      <div class=" text-center bg-danger p-2 mx-5">
+        <a href="javascript:void(0)" class="text-white fs-1"><i class="fas fa-warning"></i></a>
+        <h6 class="text-center mb-4 mt-2">Please login yourself to contact your agent !!!</h6>
       </div>
-    </section>
+      <button class="btn btn-outline-primary w-100 mt-4" routerLink="/login">Login Yourself</button>
+    </div>
+  </p-dialog>
+</div>
 
+<div class="modal fade p-0" id="deleteProductsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="text-center m-0"><b>Contact Your Agent : <span class="text-danger"> <b>{{agentName}}</b></span></b>
+        </p>
+        <button type="button" class="btn-close p-2 closebtnofArtist" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form class="" *ngIf="contactAgentForm">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName" />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Enter Email" formControlName="email" />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="number" class="form-control" placeholder="Enter Mobile" formControlName="mobileNumber" />
+              </div>
+            </div>
+
+            <button class="btn btn-primary w-100" (click)="submitForm()">Verify OTP sent to your E-mail</button>
+
+          </div>
+        </form>
+
+        <div *ngIf="!contactAgentForm" class="p-3 otpForm">
+          <form [formGroup]="otpForm">
+            <div class="text-center p-2 m-2">
+              <label class="">Enter OTP :</label>
+            </div>
+            <div class="form-group">
+              <div class="otp-inputs text-center">
+                <input type="text" id="otp1" formControlName="otp1" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 2)">
+                <input type="text" id="otp2" formControlName="otp2" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 3)">
+                <input type="text" id="otp3" formControlName="otp3" class="form-control mx-2" maxlength="1"
+                  (input)="handleInput($event, 4)">
+                <input type="text" id="otp4" formControlName="otp4" class="form-control mx-2" maxlength="1">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-info w-100" [disabled]="!otpForm.valid">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</section> -->
+</div>

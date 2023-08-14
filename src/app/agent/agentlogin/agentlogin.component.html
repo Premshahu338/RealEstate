@@ -1,47 +1,68 @@
-<section class="signup-section">
-    <img src="../../../assets/images/team--1.jpg" alt="" class="img-fluid">
-    <div class="container-fluid">
-        <div class="card p-4">
+<section class="login-section">
+    <div class="container-fluid py-3">
+        <div class="card px-2 pt-2">
+            <div class="text-center bg-dark p-3">
+                <h6 class="welcome"><b>Welcome to <span class="navbar-brand fs-4 mx-2">PremNivas</span> Agents Portal</b></h6>
+                <p class="m-0">Login yourself as Agent and upload your desired properties !!!</p>
+            </div>
             <div class="card-body">
-                <p class="text-center text-danger"><b>Welcome To Agents Portal !!</b></p>
-                <h4 class="heading py-3">Sign into your account</h4>
-                <form class="mb-3" [formGroup]="AgentloginForm">
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Agent Email"
-                            formControlName="email" />
-                        <div class="mt-2"
-                            *ngIf="AgentloginForm.controls['email'].hasError('required') && AgentloginForm.controls['email'].touched">
-                            <span class="text-danger"><b>*Please Enter Your Email</b></span>
-                        </div>
-                        <div class="mt-2"
-                            *ngIf="AgentloginForm.controls['email'].hasError('pattern') && (AgentloginForm.controls['email'].touched || AgentloginForm.controls['email'].dirty)">
-                            <span class="text-danger"><b>*Please Enter Valid Email</b></span>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password"
-                            formControlName="password" />
-                        <div class="mt-2"
-                            *ngIf="AgentloginForm.controls['password'].hasError('required') && AgentloginForm.controls['password'].touched">
-                            <span class="text-danger"><b>*Please Enter Your Password</b></span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-info px-3 py-2 w-100" (click)="Agentlogin()" [disabled]="AgentloginForm.invalid">Login</button>
-                    </div>
-                </form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="heading py-3">Sign into your account</h4>
+                        <form class="mb-3" [formGroup]="AgentloginForm">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter Agent Email"
+                                    formControlName="email" />
+                                <div class="mt-2"
+                                    *ngIf="AgentloginForm.controls['email'].hasError('required') && AgentloginForm.controls['email'].touched">
+                                    <span class="text-danger"><b>*Please Enter Your Email</b></span>
+                                </div>
+                                <div class="mt-2"
+                                    *ngIf="AgentloginForm.controls['email'].hasError('pattern') && (AgentloginForm.controls['email'].touched || AgentloginForm.controls['email'].dirty)">
+                                    <span class="text-danger"><b>*Please Enter Valid Email</b></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="passwordInput"
+                                    placeholder="Enter password" formControlName="password" />
+                                <div class="mt-2"
+                                    *ngIf="AgentloginForm.controls['password'].hasError('required') && AgentloginForm.controls['password'].touched">
+                                    <span class="text-danger"><b>*Please Enter Your Password</b></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary shadow w-100" (click)="Agentlogin()"
+                                    [disabled]="AgentloginForm.invalid">Login</button>
+                            </div>
+                        </form>
 
-                <div class="row my-4">
-                    <div class="col-lg-6 text-start mt-3">
-                        <a href="javascript:void(0)" routerLink="/signup">Register Here</a>
+                        <div class="text-center my-3">
+                            <span>Or</span>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-google"></i></a>
+                            <a href="javascript:void(0)" class="bg-danger text-white p-2 me-2 fs-5 rounded"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-lg-4 offset-lg-2 text-center mb-3">
+                                <a href="javascript:void(0)" routerLink="/signup">Register Here</a>
+                            </div>
+                            <div class="col-lg-4 text-center mb-3">
+                                <a href="javascript:void(0)">Forget Password</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 text-end mt-3">
-                        <a href="javascript:void(0)">Forget Password</a>
+                    <div class="col-lg-6 text-center signup-img">
+                        <img src="../../assets/images/team--2.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
+                <button class="btn btn-primary py-2 w-50 m-2" routerLink="/login">Go to User Login</button>
             </div>
         </div>
     </div>
 </section>
+
 
 <p-toast position="top-right"></p-toast>

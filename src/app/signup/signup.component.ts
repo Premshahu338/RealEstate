@@ -59,7 +59,7 @@ export class SignupComponent {
     if (this.agentSignUpForm.valid) {
       this.global.postUnauthenticateData(this.global.basepath + '/agent/register', this.agentSignUpForm.value).subscribe((res: any) => {
         if (res.success) {
-          console.log(res);
+          console.log("ll",res.newAgent.agentId);
           this.messageService.clear()
           this.messageService.add({ severity: 'success', summary: 'Agent registered successfully' });
           this.agentSignUpForm.reset()

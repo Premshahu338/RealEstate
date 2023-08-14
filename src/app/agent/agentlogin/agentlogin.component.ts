@@ -27,6 +27,7 @@ export class AgentloginComponent {
           console.log(res);
           // sessionStorage.setItem('email', this.loginForm.controls['email'].value)
           sessionStorage.setItem('isAgentLogin','true')
+          sessionStorage.setItem('agentId',res.agentId)
           this.messageService.clear()
           this.messageService.add({ severity: 'success', summary: 'Agent login successfully' });
           setTimeout(() => {
@@ -34,6 +35,10 @@ export class AgentloginComponent {
             this.router.navigate(['/agent/agent-home'])
           }, 1000);
         }
+      }
+      ,(err:any) => {
+        this.messageService.clear()
+        this.messageService.add({ severity: 'error', summary: 'invalid credential' });
       })
     }
   }

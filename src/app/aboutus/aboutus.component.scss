@@ -1,15 +1,15 @@
 .hero-section {
-    background-image: url("../../assets/images/team-1.jpg");
+    background-image: url("../../assets/images/team--1.jpg");
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 30vh;
     position: relative;
     // filter: brightness(70%);
   }
   
   .hero-section::before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.661);
     position: absolute;
     top: 0;
     left: 0;
@@ -19,9 +19,19 @@
   
   .hero-section-content {
     position: absolute;
-    top: 64%;
-    left: 15%;
+    top: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
   }
+
+  .card{
+    background-color: #fff2e9;
+    .card-body{
+      .subtext{
+        color: #000000;
+      }
+    }
+  }
+

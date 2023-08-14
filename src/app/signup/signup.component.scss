@@ -1,31 +1,18 @@
 .signup-section {
 
-    // background-image: url("../../assets/images/home-22.jpg");
     .img-fluid {
-        height: 100vh;
+        height: 60vh;
         background-size: cover;
         object-fit: cover;
-        width: 100%;
         filter: brightness(0.8);
     }
 
     .card {
-        width: 30%;
-        position: absolute;
-        top: 3%;
-        left: 36%;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 2.7);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
         .heading {
             font-family: roboto, sans-serif;
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        p {
-            font-family: roboto, sans-serif;
-            font-size: 15px;
-            color: #ff0000;
+            font-size: 19px;
             font-weight: 600;
         }
 
@@ -34,28 +21,18 @@
             font-weight: 700;
             color: #000000;
         }
-
-        li {
-            max-width: 50%;
-            text-align: center;
+        .nav-item{
             width: 50%;
         }
-
-        .nav-tabs .nav-link {
-            border: none;
-        }
-
-        .nav-tabs .nav-link.active {
-            background-color: aqua;
-            padding: 10px;
-            border-radius: 0%;
-            border: none;
-        }
     }
 
-    .text-danger {
-        font-size: 12px;
+    .nav-tabs .nav-link {
+        border: none;
     }
 
-    
+    .nav-tabs .nav-link.active {
+        background-color: #ff9249;
+        border-radius: 0%;
+        border: none;
+    }
 }
